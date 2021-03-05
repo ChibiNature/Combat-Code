@@ -566,6 +566,10 @@ screen about():
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
+## This is redefined in options.rpy to add text to the about screen.
+define gui.about = ""
+
+
 style about_label is gui_label
 style about_label_text is gui_label_text
 style about_text is gui_text
@@ -919,7 +923,7 @@ screen history():
 
 ## This determines what tags are allowed to be displayed on the history screen.
 
-define gui.history_allow_tags = { "alt", "noalt" }
+define gui.history_allow_tags = set()
 
 
 style history_window is empty

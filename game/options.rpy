@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("CombatPeetrack")
+define config.name = _("forChibiNature")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "CombatPeetrack"
+define build.name = "forChibiNature"
 
 
 ## Sounds and music ############################################################
@@ -105,7 +105,7 @@ define config.end_game_transition = None
 ## After the game has started, this can be changed with the "window show",
 ## "window hide", and "window auto" statements.
 
-define config.window = "auto"
+define config.window = "hide"
 
 
 ## Transitions used to show and hide the dialogue window
@@ -142,7 +142,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "CombatPeetrack-1614911208"
+define config.save_directory = "forChibiNature-1592441781"
 
 
 ## Icon ########################################################################
@@ -181,9 +181,16 @@ init python:
     build.classify('**.bak', None)
     build.classify('**/.**', None)
     build.classify('**/#**', None)
+
+    build.classify('**.~**', None)
+    build.classify('**.txt', None)
+    build.classify('**.rpy', None)
+
     build.classify('**/thumbs.db', None)
 
     ## To archive files, classify them as 'archive'.
+
+    build.classify('**.rpyc', 'archive')
 
     # build.classify('game/**.png', 'archive')
     # build.classify('game/**.jpg', 'archive')
